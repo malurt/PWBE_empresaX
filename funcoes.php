@@ -27,11 +27,23 @@ function buscarFuncionario($listaFuncionarios, $nomeFuncionario)
     $funcionariosFiltro = [];
     foreach($listaFuncionarios as $funcionario) //procura na lista toda
     {
-
-        if($funcionario->first_name == $nomeFuncionario) //se achar
+        if(mb_strpos($funcionario->first_name, $nomeFuncionario) !== false)//se achar
         {
             $funcionariosFiltro [] = $funcionario;// guarda o nome na lista de encontrados
         }
+        elseif(mb_strpos($funcionario->last_name, $nomeFuncionario) !== false)
+        {
+            $funcionariosFiltro [] = $funcionario;
+        }
+        elseif(mb_strpos($funcionario->department, $nomeFuncionario) !== false)
+        {
+            $funcionariosFiltro [] = $funcionario;
+        }
+
+        /*if($funcionario->first_name == $nomeFuncionario) //se achar
+         {
+            $funcionariosFiltro [] = $funcionario;// guarda o nome na lista de encontrados
+        }*/
     }
     return $funcionariosFiltro;//ao fim da pesquisa, retorna todos os alunos encontrados
 }
