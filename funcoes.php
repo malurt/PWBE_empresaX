@@ -22,25 +22,29 @@ function contarFuncionariosTotal($listaFuncionarios)
 }
 
 // busca aluno e devolve a lista com os alunos
-function buscarFuncionario($listaFuncionarios, $nomeFuncionario)
+function buscarFuncionario($listaFuncionarios, $palavraChavePesquisa)
 {
     $funcionariosFiltro = [];
     foreach($listaFuncionarios as $funcionario) //procura na lista toda
     {
-        if(mb_strpos($funcionario->first_name, $nomeFuncionario) !== false)//se achar
+        if(mb_strpos($funcionario->first_name, $palavraChavePesquisa) !== false)//se achar
         {
             $funcionariosFiltro [] = $funcionario;// guarda o nome na lista de encontrados
         }
-        elseif(mb_strpos($funcionario->last_name, $nomeFuncionario) !== false)
+        elseif(mb_strpos($funcionario->last_name, $palavraChavePesquisa) !== false)
         {
             $funcionariosFiltro [] = $funcionario;
         }
-        elseif(mb_strpos($funcionario->department, $nomeFuncionario) !== false)
+        elseif(mb_strpos($funcionario->department, $palavraChavePesquisa) !== false)
+        {
+            $funcionariosFiltro [] = $funcionario;
+        }
+        elseif(mb_strpos($funcionario->country, $palavraChavePesquisa) !== false)
         {
             $funcionariosFiltro [] = $funcionario;
         }
 
-        /*if($funcionario->first_name == $nomeFuncionario) //se achar
+        /*if($funcionario->first_name == $palavraChavePesquisa) //se achar
          {
             $funcionariosFiltro [] = $funcionario;// guarda o nome na lista de encontrados
         }*/
