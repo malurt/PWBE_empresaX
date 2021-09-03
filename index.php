@@ -25,7 +25,7 @@
     <section>
 
         <h1>Funcionários da empresa X</h1>
-        <h2>A empresa conta com <?= $numeroTotalFuncionarios?></h2>
+        <h2>A empresa conta com <?= $numeroTotalFuncionarios?> funcionários</h2>
 
         <form>
             <input type="text" name="buscarFuncionario" placeholder="Buscar Funcionario" value="<?=isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : ""?>">
