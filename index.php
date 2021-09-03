@@ -17,6 +17,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://kit.fontawesome.com/a757f2d5f7.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
 
     <title>Busca de Funcionarios</title>
@@ -29,7 +31,7 @@
 
         <form>
             <input type="text" name="buscarFuncionario" placeholder="Buscar Funcionario" value="<?=isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : ""?>">
-            <button>Buscar</button>
+            <button><i class="fas fa-search"></i></button>
         </form>
         
         <table border="1">
