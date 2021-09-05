@@ -27,19 +27,19 @@ function buscarFuncionario($listaFuncionarios, $palavraChavePesquisa)
     $funcionariosFiltro = [];
     foreach($listaFuncionarios as $funcionario) //procura na lista toda
     {
-        if(mb_strpos($funcionario->first_name, $palavraChavePesquisa) !== false)//se achar
+        if(mb_strpos(strtoupper($funcionario->first_name), strtoupper($palavraChavePesquisa)) !== false)//se achar
         {
             $funcionariosFiltro [] = $funcionario;// guarda o nome na lista de encontrados
         }
-        elseif(mb_strpos($funcionario->last_name, $palavraChavePesquisa) !== false)
+        elseif(mb_strpos(strtoupper($funcionario->last_name), strtoupper($palavraChavePesquisa)) !== false)
         {
             $funcionariosFiltro [] = $funcionario;
         }
-        elseif(mb_strpos($funcionario->department, $palavraChavePesquisa) !== false)
+        elseif(mb_strpos(strtoupper($funcionario->department), strtoupper($palavraChavePesquisa)) !== false)
         {
             $funcionariosFiltro [] = $funcionario;
         }
-        elseif(mb_strpos($funcionario->country, $palavraChavePesquisa) !== false)
+        elseif(mb_strpos(strtoupper($funcionario->country), strtoupper($palavraChavePesquisa)) !== false)
         {
             $funcionariosFiltro [] = $funcionario;
         }
