@@ -17,7 +17,9 @@ if (isset($_POST["idFuncionario"]))
     $enderecoIp = $_POST["ipAddressFuncionario"];
     $pais = $_POST["countryFuncionario"];
     $departamento = $_POST["departments"];
-    registrarFuncionario("empresaX.json",$id, $primeiroNome,$segundoNome,$email,$genero,$enderecoIp,$pais,$departamento);
+
+    $arquivoArray = lerAquivo("./empresaX.json");
+    registrarFuncionario($arquivoArray,$id, $primeiroNome,$segundoNome,$email,$genero,$enderecoIp,$pais,$departamento);
 }
 
 $numeroTotalFuncionarios = contarFuncionariosTotal($funcionarios);

@@ -49,14 +49,13 @@ function buscarFuncionario($listaFuncionarios, $palavraChavePesquisa)
     return $funcionariosFiltro;//ao fim da pesquisa, retorna todos os alunos encontrados
 }
 
-function registrarFuncionario ($arquivoJson, $idFuncionario, $firstName, $lastName, $email, $gender, $ipAddress, $country, $department)
+/*function registrarFuncionario ($arquivoJson, $idFuncionario, $firstName, $lastName, $email, $gender, $ipAddress, $country, $department)
 {
     //pega o arquivo JSON e transforma em array
         $jsonArray = json_decode($arquivoJson);
     
-    //adiciona na ultima posição do array o novo funcionário
-        //$funcionario = 
-        $jsonArray [0] =
+    //adiciona na ultima posição do array o novo funcionário 
+        $jsonArray [] =
         [
 
             "id" => $idFuncionario,
@@ -69,10 +68,7 @@ function registrarFuncionario ($arquivoJson, $idFuncionario, $firstName, $lastNa
             "department" => $department
         ];
 
-        //$jsonArray[0]=$funcionario;
-
     //transforma o array em JSON
-        //$funcionarioJson = json_encode($jsonArray);
         $jsonFinal = json_encode($jsonArray);
 
     //abre o arquivo JSON para edição
@@ -83,4 +79,55 @@ function registrarFuncionario ($arquivoJson, $idFuncionario, $firstName, $lastNa
 
     //fecha o arquivo
         fclose($arquivoEditar);
+}*/
+
+/*function registrarFuncionario ($arquivoJson, $idFuncionario, $firstName, $lastName, $email, $gender, $ipAddress, $country, $department)
+{
+
+    //pega o arquivo JSON e transforma em array
+    $jsonArray = json_decode($arquivoJson);
+    
+    //adiciona na ultima posição do array o novo funcionário
+        $jsonArray [] =
+        [
+
+            "id" => $idFuncionario,
+            "first_name" => $firstName,
+            "last_name" => $lastName,
+            "email" => $email,
+            "gender" => $gender,
+            "ip_address" => $ipAddress,
+            "country" => $country,
+            "department" => $department
+        ];
+
+    //transforma o array em JSON
+        $jsonFinal = json_encode($jsonArray);
+
+    //envia o conteúdo para o arquivo
+        file_put_contents($arquivoJson, $jsonFinal);
+
+}*/
+
+function registrarFuncionario ($arquivoArray, $idFuncionario, $firstName, $lastName, $email, $gender, $ipAddress, $country, $department)
+{    
+    //adiciona na ultima posição do array o novo funcionário
+    $arquivoArray [] =
+    [
+        "id" => $idFuncionario,
+        "first_name" => $firstName,
+        "last_name" => $lastName,
+        "email" => $email,
+        "gender" => $gender,
+        "ip_address" => $ipAddress,
+        "country" => $country,
+        "department" => $department
+    ];
+
+    //transforma o array em JSON
+        $jsonFinal = json_encode($arquivoArray);
+
+    //envia o conteúdo para o arquivo
+        file_put_contents("empresaX.json", $jsonFinal);
+
 }
