@@ -21,11 +21,13 @@ if (isset($_POST["idFuncionario"]))
     registrarFuncionario($funcionarios,$id, $primeiroNome,$segundoNome,$email,$genero,$enderecoIp,$pais,$departamento);
 }
 
-/*if(isset($_GET["idFuncionarioApagar"])) 
+if(isset($_GET["idFuncionarioApagar"])) 
 {
     $idFuncionarioApagar = $_GET["idFuncionarioApagar"];
     apagarFuncionario("./empresaX.json", $funcionarios, $idFuncionarioApagar );
-}*/
+    header("location: index.php");
+
+}
 
 $numeroTotalFuncionarios = contarFuncionariosTotal($funcionarios);
 ?>
