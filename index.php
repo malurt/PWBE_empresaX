@@ -21,6 +21,12 @@ if (isset($_POST["idFuncionario"]))
     registrarFuncionario($funcionarios,$id, $primeiroNome,$segundoNome,$email,$genero,$enderecoIp,$pais,$departamento);
 }
 
+/*if(isset($_GET["idFuncionarioApagar"])) 
+{
+    $idFuncionarioApagar = $_GET["idFuncionarioApagar"];
+    apagarFuncionario("./empresaX.json", $funcionarios, $idFuncionarioApagar );
+}*/
+
 $numeroTotalFuncionarios = contarFuncionariosTotal($funcionarios);
 ?>
 
@@ -49,9 +55,8 @@ $numeroTotalFuncionarios = contarFuncionariosTotal($funcionarios);
         <form>
             <input type="text" name="buscarFuncionario" placeholder="Buscar Funcionario" value="<?= isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : "" ?>">
             <button><i class="fas fa-search"></i></button>
-
         </form>
-        <button onclick="showFormAddFuncionario()"><i class="fas fa-plus"></i></button>
+        <button><i class="fas fa-plus"></i></button>
 
         <table>
             <tr>
@@ -63,6 +68,7 @@ $numeroTotalFuncionarios = contarFuncionariosTotal($funcionarios);
                 <th>Endereço IP</th>
                 <th>País</th>
                 <th>Departamento</th>
+                <th>Ações</th>
             </tr>
 
             <?php
@@ -77,6 +83,24 @@ $numeroTotalFuncionarios = contarFuncionariosTotal($funcionarios);
                     <td><?= $funcionario->ip_address ?></td>
                     <td><?= $funcionario->country ?></td>
                     <td><?= $funcionario->department ?></td>
+                    <td>
+                        <form>
+                            <input type="hidden" name="idFuncionarioApagar" value=<?= $funcionario->id ?>>
+                            <button><i class="far fa-trash-alt"></i></button> 
+                        </form>
+                        <form action="./acoes.php">
+                            <input type="hidden" name="idFuncionarioEditar" value=<?= $funcionario->id ?>>
+                            <input type="hidden" name="first_name" value=<?= $funcionario->first_name ?>>
+                            <input type="hidden" name="last_name" value=<?= $funcionario->last_name ?>>
+                            <input type="hidden" name="email" value=<?= $funcionario->email ?>>
+                            <input type="hidden" name="gender" value=<?= $funcionario->gender ?>>
+                            <input type="hidden" name="ip_address" value=<?= $funcionario->ip_address ?>>
+                            <input type="hidden" name="country" value=<?= $funcionario->country ?>>
+                            <input type="hidden" name="department" value=<?= $funcionario->department ?>>
+                            <button onclick="showFormEditFuncionario()"><i class="far fa-edit"></i></button>
+                        </form>
+                         
+                    </td>
 
                 </tr>
             <?php
