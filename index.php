@@ -97,7 +97,7 @@ $numeroTotalFuncionarios = contarFuncionariosTotal($funcionarios);
                             <input type="hidden" name="ip_address" value="<?= $funcionario->ip_address ?>">
                             <input type="hidden" name="country" value="<?= $funcionario->country ?>">
                             <input type="hidden" name="department" value="<?= $funcionario->department ?>">
-                            <button onclick="showFormEditFuncionario()"><i class="far fa-edit"></i></button>
+                            <button><i class="far fa-edit"></i></button>
                         </form>
                          
                     </td>
