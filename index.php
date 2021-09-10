@@ -2,7 +2,7 @@
 require("./funcoes.php");
 $funcionarios = lerAquivo("./empresaX.json");
 
-if (isset($_GET["buscarFuncionario"])) {
+if (isset($_GET["buscarFuncionario"]) && $_GET["buscarFuncionario"] != "") {
     $funcionarios = buscarFuncionario($funcionarios, $_GET["buscarFuncionario"]);
 }
 
@@ -89,14 +89,14 @@ $numeroTotalFuncionarios = contarFuncionariosTotal($funcionarios);
                             <button><i class="far fa-trash-alt"></i></button> 
                         </form>
                         <form action="./acoes.php">
-                            <input type="hidden" name="idFuncionarioEditar" value=<?= $funcionario->id ?>>
-                            <input type="hidden" name="first_name" value=<?= $funcionario->first_name ?>>
-                            <input type="hidden" name="last_name" value=<?= $funcionario->last_name ?>>
-                            <input type="hidden" name="email" value=<?= $funcionario->email ?>>
-                            <input type="hidden" name="gender" value=<?= $funcionario->gender ?>>
-                            <input type="hidden" name="ip_address" value=<?= $funcionario->ip_address ?>>
-                            <input type="hidden" name="country" value=<?= $funcionario->country ?>>
-                            <input type="hidden" name="department" value=<?= $funcionario->department ?>>
+                            <input type="hidden" name="idFuncionarioEditar" value="<?= $funcionario->id ?>">
+                            <input type="hidden" name="first_name" value="<?= $funcionario->first_name ?>">
+                            <input type="hidden" name="last_name" value="<?= $funcionario->last_name ?>">
+                            <input type="hidden" name="email" value="<?= $funcionario->email ?>">
+                            <input type="hidden" name="gender" value="<?= $funcionario->gender ?>">
+                            <input type="hidden" name="ip_address" value="<?= $funcionario->ip_address ?>">
+                            <input type="hidden" name="country" value="<?= $funcionario->country ?>">
+                            <input type="hidden" name="department" value="<?= $funcionario->department ?>">
                             <button onclick="showFormEditFuncionario()"><i class="far fa-edit"></i></button>
                         </form>
                          

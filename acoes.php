@@ -94,14 +94,16 @@ else
                     <label class="titulo-form">department</label>
                     <select name="departments">
                         <option selected value="<?=$funcionarioEditar["department"]?>"><?=$funcionarioEditar["department"]?></option>
-                        <option value="Marketing" <?= $funcionarioEditar["department"] == "Marketing" ? "disabled" : "" ?>>Marketing</option>
-                        <option value="Engineering" <?= $funcionarioEditar["department"] == "Engineering" ? "disabled" : "" ?>>Engineering</option>
-                        <option value="Human Resources" <?= $funcionarioEditar["department"] == "Human Resources" ? "disabled" : "" ?>>Human Resources</option>
-                        <option value="Research and Development" <?= $funcionarioEditar["department"] == "Research and Development" ? "disabled" : "" ?>>Research and Development</option>
-                        <option value="Support" <?= $funcionarioEditar["department"] == "Support" ? "disabled" : "" ?>>Support</option>
-                        <option value="Accounting" <?= $funcionarioEditar["department"] == "Accounting" ? "disabled" : "" ?>>Accounting</option>
-                        <option value="Training" <?= $funcionarioEditar["department"] == "Training" ? "disabled" : "" ?>>Training</option>
-                        <option value="Legal" <?= $funcionarioEditar["department"] == "Legal" ? "disabled" : "" ?>>Legal</option>
+                        <?= $funcionarioEditar["department"] == "Marketing" ? "" : "<option value='Marketing'>Marketing</option>" ?>
+                        <?= $funcionarioEditar["department"] == "Engineering" ? "" : "<option value='Engineering'>Engineering</option>" ?>
+                        <?= $funcionarioEditar["department"] == "Human Resources" ? "" : "<option value='Human Resources'>Human Resources</option>" ?>
+                        <?= $funcionarioEditar["department"] == "Research and Development" ? "" : "<option value='Research and Development'>Research and Development</option>" ?>
+                        <?= $funcionarioEditar["department"] == "Support" ? "" : "<option value='Support'>Support</option>" ?>
+                        <?= $funcionarioEditar["department"] == "Accounting" ? "" : "<option value='Accounting'>Accounting</option>" ?>
+                        <?= $funcionarioEditar["department"] == "Training" ? "" : "<option value='Training'>Training</option>" ?>
+                        <?= $funcionarioEditar["department"] == "Legal" ? "" : "<option value='Legal'>Legal</option>" ?>
+
+                        <
 
                     </select>
                 </div>
