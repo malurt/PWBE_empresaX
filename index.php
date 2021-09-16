@@ -58,7 +58,7 @@ $numeroTotalFuncionarios = contarFuncionariosTotal($funcionarios);
             <input type="text" name="buscarFuncionario" placeholder="Buscar Funcionario" value="<?= isset($_GET["buscarFuncionario"]) ? $_GET["buscarFuncionario"] : "" ?>">
             <button><i class="fas fa-search"></i></button>
         </form>
-        <button><i class="fas fa-plus"></i></button>
+        <button onclick="showFormAddFuncionario()"><i class="fas fa-plus"></i></button>
 
         <table>
             <tr>
