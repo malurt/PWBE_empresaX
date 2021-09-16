@@ -39,7 +39,7 @@ if(isset($_GET["idFuncionario"]))
 
 else
 {
-    //echo "socorro deus";
+    echo "socorro deus";
 }
 ?>
 

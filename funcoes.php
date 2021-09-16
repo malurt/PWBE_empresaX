@@ -81,7 +81,7 @@ function apagarFuncionario($nomeArquivo, &$arrayFuncionarios, $idFuncionario)
         {
             unset($arrayFuncionarios[$chave]);
 
-            $json = json_encode($arrayFuncionarios);
+            $json = json_encode(array_values($arrayFuncionarios));
 
             file_put_contents($nomeArquivo, $json);
         }
@@ -96,7 +96,7 @@ function editarFuncionario($nomeArquivo, &$arrayFuncionarios, $funcionarioEditad
         {
             $arrayFuncionarios[$chave] = $funcionarioEditado;
 
-            $json = json_encode($arrayFuncionarios);
+            $json = json_encode(array_values($arrayFuncionarios));
 
             file_put_contents($nomeArquivo, $json);
         }
