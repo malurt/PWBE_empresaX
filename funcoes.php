@@ -95,10 +95,8 @@ function editarFuncionario($nomeArquivo, &$arrayFuncionarios, $funcionarioEditad
         if($funcionario->id == $funcionarioEditado["id"])
         {
             $arrayFuncionarios[$chave] = $funcionarioEditado;
-
-            $json = json_encode(array_values($arrayFuncionarios));
-
-            file_put_contents($nomeArquivo, $json);
         }
     }
+    $json = json_encode(array_values($arrayFuncionarios));
+    file_put_contents($nomeArquivo, $json);
 }
